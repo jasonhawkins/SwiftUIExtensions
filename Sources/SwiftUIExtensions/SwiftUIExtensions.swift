@@ -12,7 +12,7 @@ import SwiftUI
 extension ContentSizeCategory {
     
     /// Returns an array of every available size category.
-    public static var common: [ContentSizeCategory] = [
+    public static var allCases: [ContentSizeCategory] = [
         .extraSmall,
         .small,
         .medium,
@@ -25,5 +25,13 @@ extension ContentSizeCategory {
         .accessibilityExtraLarge,
         .accessibilityExtraExtraLarge,
         .accessibilityExtraExtraExtraLarge
+    ]
+    
+    /// Returns an array of common size categories.
+    public static var commonCases: [ContentSizeCategory] = [
+        .small,
+        .medium,
+        .large,
+        .extraLarge
     ]
 }

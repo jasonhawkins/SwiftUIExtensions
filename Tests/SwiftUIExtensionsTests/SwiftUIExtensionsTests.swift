@@ -6,8 +6,8 @@ import SwiftUI
 final class SwiftUIExtensionsTests: XCTestCase {
     
     // MARK: - ContentSizeCategory
-    func testCommon_ReturnsAllSizeCategoryCases() {
-        let cases = ContentSizeCategory.common
+    func testAllCases_returnsAllSizeCategoryCases() {
+        let cases = ContentSizeCategory.allCases
         
         XCTAssertTrue(cases.count == 12, "Unexpected number of size categories.")
         
@@ -23,5 +23,16 @@ final class SwiftUIExtensionsTests: XCTestCase {
         XCTAssertEqual(cases[9], .accessibilityExtraLarge)
         XCTAssertEqual(cases[10], .accessibilityExtraExtraLarge)
         XCTAssertEqual(cases[11], .accessibilityExtraExtraExtraLarge)
+    }
+    
+    func testCommonCases_returnsExpectedSizeCategoryCases() {
+        let cases = ContentSizeCategory.commonCases
+        
+        XCTAssertTrue(cases.count == 4, "Unexpected number of size categories.")
+        
+        XCTAssertEqual(cases[0], .small)
+        XCTAssertEqual(cases[1], .medium)
+        XCTAssertEqual(cases[2], .large)
+        XCTAssertEqual(cases[3], .extraLarge)
     }
 }
