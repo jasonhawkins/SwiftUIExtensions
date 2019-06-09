@@ -13,7 +13,7 @@ import SwiftUI
 extension ContentSizeCategory {
     
     /// Returns an array of every available size category.
-    public static var allCases: [ContentSizeCategory] = [
+    public static let allCases: [ContentSizeCategory] = [
         .extraSmall,
         .small,
         .medium,
@@ -29,7 +29,7 @@ extension ContentSizeCategory {
     ]
     
     /// Returns an array of common size categories.
-    public static var commonCases: [ContentSizeCategory] = [
+    public static let commonCases: [ContentSizeCategory] = [
         .extraSmall,
         .medium,
         .large,
@@ -42,7 +42,7 @@ extension ContentSizeCategory {
 extension ColorScheme {
     
     /// Returns an array of all color schemes
-    public static var allCases: [ColorScheme] = [
+    public static let allCases: [ColorScheme] = [
         .light,
         .dark
     ]
