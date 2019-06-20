@@ -35,6 +35,12 @@ extension ContentSizeCategory {
         .large,
         .extraExtraLarge
     ]
+    
+    /// Returns an array of the size categories at the extreme ranges.
+    public static let extremeCases: [ContentSizeCategory] = [
+        .extraSmall,
+        .accessibilityExtraExtraExtraLarge
+    ]
 }
 
 // MARK: - ColorScheme
