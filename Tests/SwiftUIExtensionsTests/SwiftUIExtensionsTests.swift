@@ -36,6 +36,15 @@ final class SwiftUIExtensionsTests: XCTestCase {
         XCTAssertEqual(cases[3], .extraExtraLarge)
     }
     
+    func testExtremeCases_returnsExpectedSizeCategoryCases() {
+        let cases = ContentSizeCategory.extremeCases
+        
+        XCTAssertTrue(cases.count == 2, "Unexpected number of size categories.")
+        
+        XCTAssertEqual(cases[0], .extraSmall)
+        XCTAssertEqual(cases[1], .accessibilityExtraExtraExtraLarge)
+    }
+    
     // MARK: - ColorScheme
     func testAllCases_ReturnsAllColorSchemeCases() {
         let cases = ColorScheme.allCases
