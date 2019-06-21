@@ -59,7 +59,7 @@ extension ColorScheme {
 public struct AdaptableColorScheme : ViewModifier {
     let appearance: ColorScheme
     
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         content
             .environment(\.colorScheme, appearance)
             .background(appearance == .light ? Color.white : Color.black)
@@ -71,7 +71,7 @@ public struct AdaptableColorScheme : ViewModifier {
 public struct DescriptiveContentSizeCategory : ViewModifier {
     let size: ContentSizeCategory
     
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         content
             .environment(\.sizeCategory, size)
             .previewLayout(.sizeThatFits)
@@ -81,7 +81,7 @@ public struct DescriptiveContentSizeCategory : ViewModifier {
 
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 public struct iPhoneSE : ViewModifier {
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         content
             .previewDevice("iPhone SE")
             .previewDisplayName("iPhone SE")
@@ -90,7 +90,7 @@ public struct iPhoneSE : ViewModifier {
 
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 struct iPhoneXsMax : ViewModifier {
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         content
             .previewDevice("iPhone Xs Max")
             .previewDisplayName("iPhone Xs Max")
