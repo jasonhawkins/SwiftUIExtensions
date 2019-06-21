@@ -53,3 +53,46 @@ extension ColorScheme {
         .dark
     ]
 }
+
+// MARK: - View modifiers
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+struct AdaptableColorScheme : ViewModifier {
+    let appearance: ColorScheme
+    
+    func body(content: Content) -> some View {
+        content
+            .environment(\.colorScheme, appearance)
+            .background(appearance == .light ? Color.white : Color.black)
+            .previewDisplayName(String(describing: appearance))
+    }
+}
+
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+struct DescriptiveContentSizeCategory : ViewModifier {
+    let size: ContentSizeCategory
+    
+    func body(content: Content) -> some View {
+        content
+            .environment(\.sizeCategory, size)
+            .previewLayout(.sizeThatFits)
+            .previewDisplayName(String(describing: size))
+    }
+}
+
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+struct iPhoneSE : ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .previewDevice("iPhone SE")
+            .previewDisplayName("iPhone SE")
+    }
+}
+
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+struct iPhoneXsMax : ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .previewDevice("iPhone Xs Max")
+            .previewDisplayName("iPhone Xs Max")
+    }
+}
