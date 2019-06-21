@@ -56,7 +56,7 @@ extension ColorScheme {
 
 // MARK: - View modifiers
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-struct AdaptableColorScheme : ViewModifier {
+public struct AdaptableColorScheme : ViewModifier {
     let appearance: ColorScheme
     
     func body(content: Content) -> some View {
@@ -68,7 +68,7 @@ struct AdaptableColorScheme : ViewModifier {
 }
 
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-struct DescriptiveContentSizeCategory : ViewModifier {
+public struct DescriptiveContentSizeCategory : ViewModifier {
     let size: ContentSizeCategory
     
     func body(content: Content) -> some View {
@@ -80,7 +80,7 @@ struct DescriptiveContentSizeCategory : ViewModifier {
 }
 
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-struct iPhoneSE : ViewModifier {
+public struct iPhoneSE : ViewModifier {
     func body(content: Content) -> some View {
         content
             .previewDevice("iPhone SE")
