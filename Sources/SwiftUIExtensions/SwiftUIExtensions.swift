@@ -56,15 +56,18 @@ extension ColorScheme {
 
 // MARK: - View modifiers
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-public struct AdaptableColorScheme : ViewModifier {
-    let appearance: ColorScheme
+public struct AdaptingColorScheme : ViewModifier {
+    private let appearance: ColorScheme
+    private let padding: Bool
     
-    public init(appearance: ColorScheme) {
+    public init(appearance: ColorScheme, padding: Bool = true) {
         self.appearance = appearance
+        self.padding = padding
     }
     
     public func body(content: Content) -> some View {
         content
+            .padding(.all, padding == true ? 8 : 0)
             .environment(\.colorScheme, appearance)
             .background(appearance == .light ? Color.white : Color.black)
             .previewDisplayName(String(describing: appearance))
@@ -72,15 +75,18 @@ public struct AdaptableColorScheme : ViewModifier {
 }
 
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-public struct DescriptiveContentSizeCategory : ViewModifier {
-    let size: ContentSizeCategory
+public struct AdaptingContentSizeCategory : ViewModifier {
+    private let size: ContentSizeCategory
+    private let padding: Bool
     
-    public init(size: ContentSizeCategory) {
+    public init(size: ContentSizeCategory, padding: Bool = true) {
         self.size = size
+        self.padding = padding
     }
     
     public func body(content: Content) -> some View {
         content
+            .padding(.all, padding == true ? 8 : 0)
             .environment(\.sizeCategory, size)
             .previewLayout(.sizeThatFits)
             .previewDisplayName(String(describing: size))
