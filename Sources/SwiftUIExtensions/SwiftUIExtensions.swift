@@ -103,7 +103,7 @@ public struct iPhoneSE : ViewModifier {
 }
 
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-struct iPhoneXsMax : ViewModifier {
+public struct iPhoneXsMax : ViewModifier {
     public func body(content: Content) -> some View {
         content
             .previewDevice("iPhone Xs Max")
