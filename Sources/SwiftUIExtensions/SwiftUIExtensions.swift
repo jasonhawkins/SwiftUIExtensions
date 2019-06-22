@@ -60,7 +60,7 @@ public struct AdaptingColorScheme : ViewModifier {
     private let appearance: ColorScheme
     private let padding: Bool
     
-    public init(appearance: ColorScheme, padding: Bool = true) {
+    public init(_ appearance: ColorScheme, padding: Bool = true) {
         self.appearance = appearance
         self.padding = padding
     }
@@ -79,7 +79,7 @@ public struct AdaptingContentSizeCategory : ViewModifier {
     private let size: ContentSizeCategory
     private let padding: Bool
     
-    public init(size: ContentSizeCategory, padding: Bool = true) {
+    public init(_ size: ContentSizeCategory, padding: Bool = true) {
         self.size = size
         self.padding = padding
     }
