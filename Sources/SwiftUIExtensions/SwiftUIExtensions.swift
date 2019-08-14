@@ -11,29 +11,6 @@ import SwiftUI
 // MARK: - ContentSizeCategory
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension ContentSizeCategory {
-    
-    /// Returns all size category cases identifiable by self.
-    public static let allCasesIdentifiableBySelf = ContentSizeCategory.allCases.identified(by: \.self)
-    
-    /// Returns an array of every available size category.
-    public static let allCases: [ContentSizeCategory] = [
-        .extraSmall,
-        .small,
-        .medium,
-        .large,
-        .extraLarge,
-        .extraExtraLarge,
-        .extraExtraExtraLarge,
-        .accessibilityMedium,
-        .accessibilityLarge,
-        .accessibilityExtraLarge,
-        .accessibilityExtraExtraLarge,
-        .accessibilityExtraExtraExtraLarge
-    ]
-    
-    /// Returns common size category cases identifiable by self.
-    public static let commonCasesIdentifiableBySelf = ContentSizeCategory.commonCases.identified(by: \.self)
-    
     /// Returns an array of common size categories.
     public static let commonCases: [ContentSizeCategory] = [
         .extraSmall,
@@ -42,27 +19,10 @@ extension ContentSizeCategory {
         .extraExtraLarge
     ]
     
-    /// Returns extreme size category cases identifiable by self.
-    public static let extremeCasesIdentifiableBySelf = ContentSizeCategory.extremeCases.identified(by: \.self)
-    
     /// Returns an array of the size categories at the extreme ranges.
     public static let extremeCases: [ContentSizeCategory] = [
         .extraSmall,
         .accessibilityExtraExtraExtraLarge
-    ]
-}
-
-// MARK: - ColorScheme
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-extension ColorScheme {
-    
-    /// Returns all color scheme cases identifiable by self.
-    public static let allCasesIdentifiableBySelf = ColorScheme.allCases.identified(by: \.self)
-    
-    /// Returns an array of all color schemes
-    public static let allCases: [ColorScheme] = [
-        .light,
-        .dark
     ]
 }
 

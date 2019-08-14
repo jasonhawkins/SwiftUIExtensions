@@ -6,24 +6,6 @@ import SwiftUI
 final class SwiftUIExtensionsTests: XCTestCase {
     
     // MARK: - ContentSizeCategory
-    func testAllCases_returnsAllSizeCategoryCases() {
-        let cases = ContentSizeCategory.allCases
-        
-        XCTAssertTrue(cases.count == 12, "Unexpected number of size categories.")
-        
-        XCTAssertEqual(cases[0], .extraSmall)
-        XCTAssertEqual(cases[1], .small)
-        XCTAssertEqual(cases[2], .medium)
-        XCTAssertEqual(cases[3], .large)
-        XCTAssertEqual(cases[4], .extraLarge)
-        XCTAssertEqual(cases[5], .extraExtraLarge)
-        XCTAssertEqual(cases[6], .extraExtraExtraLarge)
-        XCTAssertEqual(cases[7], .accessibilityMedium)
-        XCTAssertEqual(cases[8], .accessibilityLarge)
-        XCTAssertEqual(cases[9], .accessibilityExtraLarge)
-        XCTAssertEqual(cases[10], .accessibilityExtraExtraLarge)
-        XCTAssertEqual(cases[11], .accessibilityExtraExtraExtraLarge)
-    }
     
     func testCommonCases_returnsExpectedSizeCategoryCases() {
         let cases = ContentSizeCategory.commonCases
@@ -43,15 +25,5 @@ final class SwiftUIExtensionsTests: XCTestCase {
         
         XCTAssertEqual(cases[0], .extraSmall)
         XCTAssertEqual(cases[1], .accessibilityExtraExtraExtraLarge)
-    }
-    
-    // MARK: - ColorScheme
-    func testAllCases_ReturnsAllColorSchemeCases() {
-        let cases = ColorScheme.allCases
-        
-        XCTAssertTrue(cases.count == 2, "Unexpected number of color schemes.")
-        
-        XCTAssertEqual(cases[0], .light)
-        XCTAssertEqual(cases[1], .dark)
     }
 }
