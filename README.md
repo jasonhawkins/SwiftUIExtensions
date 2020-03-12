@@ -9,8 +9,7 @@ This example shows how to generate a preview for all of the cases defined in the
 By accessing its static property, `allCasesIdentifiableBySelf`, we'll generate previews for both the `.light` and `.dark` variants.  `MyView` is then modified with a custom `ViewModifier` called `AdaptingColorScheme` which provides padding, sets an appropriate background color, and applies the `appearance` environment modifier.
 
 ```Swift
-#if DEBUG
-struct MyView_Previews : PreviewProvider {
+struct MyView_Previews: PreviewProvider {
 
 static var previews: some View {
     ForEach(ColorScheme.allCasesIdentifiableBySelf) { appearance in
@@ -19,5 +18,4 @@ static var previews: some View {
             .modifier(AdaptingColorScheme(appearance))
     }
 }
-#endif
 ```
